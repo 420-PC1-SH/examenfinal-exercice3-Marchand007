@@ -1,0 +1,17 @@
+name : Deployment pipline and test
+
+on:
+  push: 
+    branches:
+      - main
+
+jobs:
+  run_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install dependencies
+        run: npm install
+      - name: build application
+        run: npm run build
+      - name: run test
+        run: npm run test
